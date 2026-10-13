@@ -1,0 +1,40 @@
+{
+  "name": "Claim Done",
+  "description": "Australian legal documents drafted from a person's answers for a flat fee: letters of demand, tribunal applications (NCAT, VCAT, QCAT, SACAT, ACAT, NTCAT and the Magistrates Courts), cease and desist letters, notices and agreements. Not a law firm; no legal advice. The person pays on Stripe and approves every document before it is sent.",
+  "url": "https://claimdone.com.au/mcp",
+  "transport": "streamable-http",
+  "protocolVersion": "2025-06-18",
+  "authentication": "none",
+  "homepage": "https://claimdone.com.au/connect-your-ai-assistant/",
+  "tools": [
+    {
+      "name": "list_services",
+      "description": "Every document Claim Done drafts, with its live flat price in AUD, what the person receives and how it is delivered. Use match_problem instead when the person has described a situation."
+    },
+    {
+      "name": "match_problem",
+      "description": "Give a plain-English description of the person's problem (who, what happened, what they want) and get the document that fits, its price, and what it does. Then call start_document."
+    },
+    {
+      "name": "start_document",
+      "description": "Creates the case and returns the questions to ask the person. Nothing is charged at this step. Ask the person for the state they live in and what happened before calling."
+    },
+    {
+      "name": "answer_questions",
+      "description": "Saves answers (question key => answer) for a case. Returns any questions still open, any follow-up questions the drafting needs, and ready_to_pay when the document can be drafted. Only pass facts the person has actually given."
+    },
+    {
+      "name": "get_payment_link",
+      "description": "Returns a Stripe Checkout URL for the case at the live flat price. Give it to the person (or open it yourself if you can pay). The document is drafted automatically once payment goes through, usually within about 5 minutes. If the case carries a notice, read it to the person and call again with acknowledge_notice=true."
+    },
+    {
+      "name": "get_status",
+      "description": "Whether the case is paid, whether the draft is ready, and the dashboard link where the person reads, edits and approves it."
+    },
+    {
+      "name": "get_document",
+      "description": "After payment: the full text of each drafted document so the person can read it, plus the dashboard link where they approve it (and, for letters, have it sent). Documents are never sent without the person's approval on the dashboard."
+    }
+  ],
+  "contact": "support@claimdone.com.au"
+}
