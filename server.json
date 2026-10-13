@@ -1,7 +1,8 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "au.com.claimdone/claimdone",
-  "description": "Australian legal documents drafted from a person's answers for a flat fee: letters of demand, tribunal applications, cease and desist letters, notices and agreements. Not a law firm.",
+  "title": "Claim Done",
+  "description": "Australian legal documents drafted from your answers for a flat fee. Not a law firm.",
   "version": "1.0.0",
   "websiteUrl": "https://claimdone.com.au/connect-your-ai-assistant/",
   "remotes": [
