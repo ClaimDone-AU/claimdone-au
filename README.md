@@ -13,7 +13,9 @@ Claim Done is not a law firm and does not give legal advice. The person reads an
 | Claude (claude.ai, desktop) | Settings → Connectors → Add custom connector → URL `https://claimdone.com.au/mcp`, no OAuth |
 | ChatGPT | Settings → Connectors → Create (developer mode) → server URL `https://claimdone.com.au/mcp`, no authentication |
 | Claude Code | `claude mcp add --transport http claimdone https://claimdone.com.au/mcp` |
-| Cursor and others | `{ "mcpServers": { "claimdone": { "url": "https://claimdone.com.au/mcp" } } }` |
+| Cline | MCP Servers → Remote Servers → name `claimdone`, URL `https://claimdone.com.au/mcp` (or see [llms-install.md](llms-install.md)) |
+| VS Code (Copilot agent mode) | `{ "servers": { "claimdone": { "type": "http", "url": "https://claimdone.com.au/mcp" } } }` in `.vscode/mcp.json` |
+| Cursor, Windsurf and others | `{ "mcpServers": { "claimdone": { "url": "https://claimdone.com.au/mcp" } } }` |
 
 - Transport: Streamable HTTP, stateless, JSON-RPC 2.0, protocol version `2025-06-18`
 - Authentication: none (each case is protected by its own access token returned by `start_document`)
